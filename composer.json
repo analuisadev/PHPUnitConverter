@@ -1,0 +1,26 @@
+{
+    "name": "pc/conversor-unidades",
+    "description": "Aplicativos de Conversão de Unidades com PHP 8.4",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Pc\\ConversorUnidades\\": "Conversor de Unidades/",
+            "Controller\\": "Controller/",
+            "Model\\": "Model/"
+        },
+        "files": [
+            "Config/configuration.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "analuisadev",
+            "email": "analuisavidal89@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">= 8.0",
+        "ext-mbstring": "*"
+    }
+}
