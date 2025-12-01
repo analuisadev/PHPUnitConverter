@@ -6,5 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Pc\\ConversorUnidades\\' => array($baseDir . '/src'),
+    'Pc\\ConversorUnidades\\' => array($baseDir . '/Conversor de Unidades'),
+    'Interface\\' => array($baseDir . '/Interface'),
+    'Factory\\' => array($baseDir . '/Factory'),
+    'Controller\\' => array($baseDir . '/Controller'),
 );

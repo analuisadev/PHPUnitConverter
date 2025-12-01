@@ -6,7 +6,8 @@
         "psr-4": {
             "Pc\\ConversorUnidades\\": "Conversor de Unidades/",
             "Controller\\": "Controller/",
-            "Model\\": "Model/"
+            "Interface\\": "Interface/",
+            "Factory\\": "Factory/"
         },
         "files": [
             "Config/configuration.php"
