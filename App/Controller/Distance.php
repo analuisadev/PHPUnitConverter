@@ -1,8 +1,8 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use Interface\ConverterInterface;
+use App\Interface\ConverterInterface;
 
 class Distance implements ConverterInterface {
     

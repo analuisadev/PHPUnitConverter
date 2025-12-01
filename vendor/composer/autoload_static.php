@@ -6,45 +6,25 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitd4f66aed7fdcd267bec7b08155647995
 {
-    public static $files = array (
-        '586cab89c6cee58633cabc439d6483dd' => __DIR__ . '/../..' . '/Config/configuration.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
             'Pc\\ConversorUnidades\\' => 21,
         ),
-        'I' => 
+        'A' => 
         array (
-            'Interface\\' => 10,
-        ),
-        'F' => 
-        array (
-            'Factory\\' => 8,
-        ),
-        'C' => 
-        array (
-            'Controller\\' => 11,
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Pc\\ConversorUnidades\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Conversor de Unidades',
+            0 => __DIR__ . '/../..' . '/App',
         ),
-        'Interface\\' => 
+        'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Interface',
-        ),
-        'Factory\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Factory',
-        ),
-        'Controller\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Controller',
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 

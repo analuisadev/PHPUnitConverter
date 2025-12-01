@@ -1,14 +1,14 @@
 <?php
-namespace Factory;
+namespace App\Factory;
 
-use Interface\ConverterInterface;
+use App\Interface\ConverterInterface;
 
-use Controller\Volume;
-use Controller\Consume;
-use Controller\Weight;
-use Controller\Time;
-use Controller\Temperature;
-use Controller\Distance;
+use App\Controller\Volume;
+use App\Controller\Consume;
+use App\Controller\Weight;
+use App\Controller\Time;
+use App\Controller\Temperature;
+use App\Controller\Distance;
 
 class ConverterFactory {
     public static function create(string $unitType): ConverterInterface {

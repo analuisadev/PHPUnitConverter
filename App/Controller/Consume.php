@@ -1,8 +1,8 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use Interface\ConverterInterface;
+use App\Interface\ConverterInterface;
 
 class Consume implements ConverterInterface {
     private const FACTOR_L_100KM_TO_MPG_US = 235.21458;

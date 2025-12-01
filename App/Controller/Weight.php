@@ -1,8 +1,8 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use Interface\ConverterInterface;
+use App\Interface\ConverterInterface;
 
 class Weight implements ConverterInterface {
     private const G_TO_KG = 0.001;

@@ -4,14 +4,9 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Pc\\ConversorUnidades\\": "Conversor de Unidades/",
-            "Controller\\": "Controller/",
-            "Interface\\": "Interface/",
-            "Factory\\": "Factory/"
-        },
-        "files": [
-            "Config/configuration.php"
-        ]
+            "App\\": "App/",
+            "Pc\\ConversorUnidades\\": "App/"
+        }
     },
     "authors": [
         {
