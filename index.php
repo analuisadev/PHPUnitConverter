@@ -14,24 +14,12 @@ $results = [
     "consume" => '0'
 ];
 
-$user_inputs = [
-    'value' => '',
-    'type' => '',
-    'from_unit' => [],
-    'to_unit' => []
-];
-
 if (isset($_GET['type'], $_GET['value'], $_GET['from_unit'], $_GET['to_unit'])) {
 
     $unit = (float) $_GET['value'];
     $type = strtolower($_GET['type']);
     $fromUnit = $_GET['from_unit'];
     $toUnit = $_GET['to_unit'];
-
-    $user_inputs['value'] = htmlspecialchars($_GET['value']);
-    $user_inputs['type'] = $type;
-    $user_inputs['from_unit'][$type] = $fromUnit;
-    $user_inputs['to_unit'][$type] = $toUnit;
 
     try {
         $converter = ConverterFactory::create($type);
