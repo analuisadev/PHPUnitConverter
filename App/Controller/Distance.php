@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Interface\ConverterInterface;
-
-class Distance implements ConverterInterface {
+class Distance  {
     
     private const KM_TO_M = 1000.0;
     private const MI_TO_M = 1609.344;
@@ -12,7 +10,7 @@ class Distance implements ConverterInterface {
     private const IN_TO_M = 0.0254;
 
     public function converter(float $unit, string $fromUnit, string $toUnit): float {
-        $baseValue = match(strtolower($fromUnit)) {
+        $baseUnit = match(strtolower($fromUnit)) {
             'km' => $unit * self::KM_TO_M,
             'm' => $unit,
             'cm' => $unit / 100.0,
@@ -23,12 +21,12 @@ class Distance implements ConverterInterface {
         };
         
         return match(strtolower($toUnit)) {
-            "m" => $baseValue,
-            "km" => $baseValue  / self::KM_TO_M,
-            "mi" => $baseValue / self::MI_TO_M,
-            "ft" => $baseValue / self::FT_TO_M,
-            "cm" => $baseValue * 100.0,
-            'in' => $baseValue / self::IN_TO_M,
+            "m" => $baseUnit,
+            "km" => $baseUnit  / self::KM_TO_M,
+            "mi" => $baseUnit / self::MI_TO_M,
+            "ft" => $baseUnit / self::FT_TO_M,
+            "cm" => $baseUnit * 100.0,
+            'in' => $baseUnit / self::IN_TO_M,
             default => throw new \InvalidArgumentException("Unidade de Destino inválida: " . $toUnit)
 
         };

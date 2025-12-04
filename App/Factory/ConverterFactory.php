@@ -1,8 +1,6 @@
 <?php
 namespace App\Factory;
 
-use App\Interface\ConverterInterface;
-
 use App\Controller\Volume;
 use App\Controller\Consume;
 use App\Controller\Weight;
@@ -11,7 +9,7 @@ use App\Controller\Temperature;
 use App\Controller\Distance;
 
 class ConverterFactory {
-    public static function create(string $unitType): ConverterInterface {
+    public static function create(string $unitType) {
         return match(strtolower($unitType)) {
             "temperature" => new Temperature(),
             "distance" => new Distance(),

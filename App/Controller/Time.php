@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
-use App\Interface\ConverterInterface;
-
-class Time implements ConverterInterface { 
+class Time 
+{ 
     
     private const DAY_TO_S = 86400.0;
     private const HOUR_TO_S = 3600.0;

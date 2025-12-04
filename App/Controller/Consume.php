@@ -2,14 +2,12 @@
 
 namespace App\Controller;
 
-use App\Interface\ConverterInterface;
-
-class Consume implements ConverterInterface {
+class Consume {
     private const FACTOR_L_100KM_TO_MPG_US = 235.21458;
     private const FACTOR_L_100KM_TO_MPG_UK = 282.48105;
 
     public function converter(float $unit, string $fromUnit, string $toUnit): float {
-        $baseValue = match(strtolower($fromUnit)) {
+        $baseUnit = match(strtolower($fromUnit)) {
             'l/100km' => $unit,
             'km/l' => (100.0 / $unit),
             'mpg (us)' => self::FACTOR_L_100KM_TO_MPG_US / $unit,
@@ -18,10 +16,10 @@ class Consume implements ConverterInterface {
         };
 
         return match(strtolower($toUnit)) {
-            'l/100km' => $baseValue,
-            'km/l' => (100.0 / $baseValue),
-            'mpg (us)' => self::FACTOR_L_100KM_TO_MPG_US / $baseValue,
-            'mpg (uk)' => self::FACTOR_L_100KM_TO_MPG_UK / $baseValue,
+            'l/100km' => $baseUnit,
+            'km/l' => (100.0 / $baseUnit),
+            'mpg (us)' => self::FACTOR_L_100KM_TO_MPG_US / $baseUnit,
+            'mpg (uk)' => self::FACTOR_L_100KM_TO_MPG_UK / $baseUnit,
             default => throw new \InvalidArgumentException("Unidade de Destino (Consumo) inválida: " . $toUnit)
         };
     }

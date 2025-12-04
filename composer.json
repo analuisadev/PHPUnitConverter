@@ -4,8 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "App\\": "App/",
-            "Pc\\ConversorUnidades\\": "App/"
+            "App\\": "App/"
         }
     },
     "authors": [

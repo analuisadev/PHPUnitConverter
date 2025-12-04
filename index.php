@@ -23,6 +23,7 @@ if (isset($_GET['type'], $_GET['value'], $_GET['from_unit'], $_GET['to_unit'])) 
 
     try {
         $converter = ConverterFactory::create($type);
+        
         $converterUnit = $converter->converter($unit, $fromUnit, $toUnit);
 
         $results[$type] = number_format($converterUnit, 2, '.', '');

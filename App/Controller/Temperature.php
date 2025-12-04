@@ -2,12 +2,10 @@
 
 namespace App\Controller;
 
-use App\Interface\ConverterInterface;
-
-class Temperature implements ConverterInterface {
+class Temperature {
     
     public function converter(float $unit, string $fromUnit, string $toUnit): float {
-        $baseValue = match(strtoupper($fromUnit)) {
+        $baseUnit = match(strtoupper($fromUnit)) {
             'C' => $unit, 
             'F' => ($unit - 32) * 5/9,
             'K' => $unit - 273.15,
@@ -15,9 +13,9 @@ class Temperature implements ConverterInterface {
         }; 
 
         return match(strtoupper($toUnit)) {
-            'C' => $baseValue, 
-            'F' => ($baseValue * 9/5) + 32,
-            'K' => $baseValue + 273.15,
+            'C' => $baseUnit, 
+            'F' => ($baseUnit * 9/5) + 32,
+            'K' => $baseUnit + 273.15,
             default => throw new \InvalidArgumentException("Unidade de Destino inválida : " . $toUnit)
         };
     }

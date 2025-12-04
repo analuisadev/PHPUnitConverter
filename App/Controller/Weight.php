@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
-use App\Interface\ConverterInterface;
 
-class Weight implements ConverterInterface {
+class Weight {
     private const G_TO_KG = 0.001;
     private const MG_TO_KG = 0.000001;
     private const LB_TO_KG = 0.453592;
@@ -12,7 +11,7 @@ class Weight implements ConverterInterface {
     private const TON_TO_KG = 1000.0;
 
     public function converter(float $unit, string $fromUnit, string $toUnit): float {
-        $baseValue = match(strtolower($fromUnit)) {
+        $baseUnit = match(strtolower($fromUnit)) {
             'kg' => $unit,
             'g'  => $unit * self::G_TO_KG,
             'mg' => $unit * self::MG_TO_KG,
@@ -23,12 +22,12 @@ class Weight implements ConverterInterface {
         };
         
         return match(strtolower($toUnit)) {
-            'kg' => $baseValue,
-            'g'  => $baseValue / self::G_TO_KG,
-            'mg' => $baseValue / self::MG_TO_KG,
-            'lb' => $baseValue / self::LB_TO_KG,
-            'oz' => $baseValue / self::OZ_TO_KG,
-            'ton'=> $baseValue / self::TON_TO_KG,
+            'kg' => $baseUnit,
+            'g'  => $baseUnit / self::G_TO_KG,
+            'mg' => $baseUnit / self::MG_TO_KG,
+            'lb' => $baseUnit / self::LB_TO_KG,
+            'oz' => $baseUnit / self::OZ_TO_KG,
+            'ton'=> $baseUnit / self::TON_TO_KG,
             default => throw new \InvalidArgumentException("Unidade de Destino (Massa) inválida: " . $toUnit)
         };
     }
